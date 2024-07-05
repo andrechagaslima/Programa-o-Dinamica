@@ -4,7 +4,7 @@ HDR_DIR = modulos
 OBJ_DIR = objetos
 
 # Nome do executável
-EXEC = main
+EXEC = tp2
 
 # Compilador e flags
 CC = gcc
