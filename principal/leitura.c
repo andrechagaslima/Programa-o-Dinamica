@@ -43,6 +43,7 @@
 
           if(n < 0 || n > 100000) {
                printf("Digite um N (0 <= N <= 100000).\n");
+               free(array);
                exit(EXIT_FAILURE); 
           }
 
