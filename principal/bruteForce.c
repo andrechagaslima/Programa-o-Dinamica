@@ -1,24 +1,31 @@
 #include "bruteForce.h"
 #include <stdio.h>
 
-     int max(int a, int b){
-     if(a > b){
-          return a;
-     } else {
-          return b;
-     }
-     }
+    int max(int a, int b){
+        if(a > b){
+            return a;
+        } else {
+            return b;
+        }
+    }
 
-     unsigned long int bruteForce(unsigned long int *vet, unsigned long int n, int i){
-     if(i >= n){
-          return 0;
-     }
+    unsigned long int solution(unsigned long int *vet, unsigned long int n, int i){
+        if(i >= n){
+            return 0;
+        }
 
-     int valor1 = bruteForce(vet, n, i+1);
-     int valor2 = vet[i] + bruteForce(vet, n, i+2);
+        int valor1 = solution(vet, n, i+1);
+        int valor2 = vet[i] + solution(vet, n, i+2);
 
-     return max(valor1, valor2);
-     }
+        return max(valor1, valor2);
+    }
+
+    unsigned long int bruteForce(unsigned long int *vet, int n){
+
+        unsigned long int result = solution(vet, n, 0);
+
+        return result;
+    }
 
      // int bruteForce(int *vet, int n){
      //     if(n == 0){
