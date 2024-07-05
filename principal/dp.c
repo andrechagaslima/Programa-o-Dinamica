@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "dp.h"
 
-int max(int a, int b){
+int maxDP(int a, int b){
     if(a > b){
         return a;
     } else {
@@ -10,7 +10,7 @@ int max(int a, int b){
     }
 }
 
-unsigned long int solution(unsigned long int *vet, int n, int i, unsigned long int *dp){
+unsigned long int solutionDP(unsigned long int *vet, int n, int i, unsigned long int *dp){
     if (i >= n) {
         return 0;
     }
@@ -19,10 +19,10 @@ unsigned long int solution(unsigned long int *vet, int n, int i, unsigned long i
         return dp[i];
     }
 
-    unsigned long int valor1 = solution(vet, n, i + 1, dp);
-    unsigned long int valor2 = vet[i] + solution(vet, n, i + 2, dp);
+    unsigned long int valor1 = solutionDP(vet, n, i + 1, dp);
+    unsigned long int valor2 = vet[i] + solutionDP(vet, n, i + 2, dp);
 
-    dp[i] = max(valor1, valor2);
+    dp[i] = maxDP(valor1, valor2);
 
     return dp[i];
 }
@@ -33,7 +33,7 @@ unsigned long int dynamic(unsigned long int *vet, int n){
         dp[i] = -1;
     }
 
-    unsigned long int result = solution(vet, n, 0, dp);
+    unsigned long int result = solutionDP(vet, n, 0, dp);
 
     free(dp);
 
