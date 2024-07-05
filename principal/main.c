@@ -5,6 +5,7 @@
 #include <sys/time.h>
 #include "leitura.h"
 #include "bruteForce.h"
+#include "dp.h"
 #include <string.h>
 
 int main(int argc, char *argv[]) {
@@ -41,9 +42,9 @@ int main(int argc, char *argv[]) {
      gettimeofday(&inicio, NULL);
 
      if(estrategia[0] == 'A') {
-          resultado = bruteForce(array, n, 0);
+          resultado = bruteForce(array, n);
      } else if (estrategia[0] == 'D') {
-          //
+          resultado = dynamic(array, n);
      }
 
      gettimeofday(&fim, NULL);
