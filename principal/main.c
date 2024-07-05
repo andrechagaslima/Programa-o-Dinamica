@@ -4,6 +4,7 @@
 #include <sys/resource.h>
 #include <sys/time.h>
 #include "leitura.h"
+#include "bruteForce.h"
 #include <string.h>
 
 int main(int argc, char *argv[]) {
@@ -35,12 +36,11 @@ int main(int argc, char *argv[]) {
 
    leituraArray(arquivo, n, array);
 
-   //Codigos aqui!!!!!!!!!!!!!!!!!!!!!!!!!!!
+   unsigned long int resultado = bruteForce(array, n, 0);
 
    double tempoUsuario = (fim.tv_sec - inicio.tv_sec) + (fim.tv_usec - inicio.tv_usec) / 1000000.0;
    double tempoNoSistema = (end.ru_stime.tv_sec - start.ru_stime.tv_sec) 
         + 1e-6 * (end.ru_stime.tv_usec - start.ru_stime.tv_usec);
-   unsigned long int resultado = 0;
 
    imprimirSaidas(arquivoSaida, resultado, tempoUsuario, tempoNoSistema);
    
