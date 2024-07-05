@@ -10,6 +10,6 @@ void imprimirSaidas(FILE *arquivoSaida, unsigned long int resultado,
 
 void testaAberturaArquivo(FILE* arquivo, char* arquivoAberto);
 
-void leituraArray(FILE* arquivo, int n, unsigned long int* array);
+void leituraArray(FILE* arquivo, unsigned long int n, unsigned long int* array);
 
 #endif
