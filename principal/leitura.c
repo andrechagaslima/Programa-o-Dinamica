@@ -22,9 +22,9 @@
      void imprimirSaidas(FILE *arquivoSaida, unsigned long int resultado,
      double tempoUsuario, double tempoNoSistema){
      
-     printf("Tempo de Usuário: %.6lf segundos.\n", tempoUsuario);
-     printf("Algoritmo ficou %.6lf segundos no sistema.\n", tempoNoSistema);
-     fprintf(arquivoSaida, "%ld", resultado);
+          printf("Tempo de Usuário: %.6lf segundos.\n", tempoUsuario);
+          printf("Algoritmo ficou %.6lf segundos no sistema.\n", tempoNoSistema);
+          fprintf(arquivoSaida, "%ld", resultado);
      
      }
 
@@ -41,8 +41,13 @@
      // Função para ler os dados de um arquivo e adicioná-los a um array.
      void leituraArray(FILE* arquivo, unsigned long int n, unsigned long int* array){
 
-     for (int i = 0; i < n; i++) {
-          fscanf(arquivo, "%ld", &array[i]);
-     }
+          if(n < 0 || n > 100000) {
+               printf("Digite um N (0 <= N <= 100000).\n");
+               exit(EXIT_FAILURE); 
+          }
+
+          for (int i = 0; i < n; i++) {
+               fscanf(arquivo, "%ld", &array[i]);
+          }
 
      }
