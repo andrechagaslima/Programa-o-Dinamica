@@ -28,8 +28,8 @@ unsigned long int solutionDP(unsigned long int *vet, int n, int i, unsigned long
 }
 
 unsigned long int dynamic(unsigned long int *vet, int n){
-    unsigned long int *dp = (unsigned long int *)malloc((n + 1) * sizeof(unsigned long int));
-    for (int i = 0; i < n + 1; i++) {
+    unsigned long int *dp = (unsigned long int *)malloc((n) * sizeof(unsigned long int));
+    for (int i = 0; i < n; i++) {
         dp[i] = -1;
     }
 
