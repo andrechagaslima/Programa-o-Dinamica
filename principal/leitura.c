@@ -20,7 +20,7 @@ void verificacaoArquivoEntrada(char *argv[], char* inputFile, char* estrategia){
 }
 
 // Função para imprimir dados de tempo de execução e distâncias calculadas em um arquivo de saída.
-void imprimirSaidas(FILE *arquivoSaida, unsigned long int resultado,
+void imprimirSaidas(FILE *arquivoSaida, long int resultado,
 double tempoUsuario, double tempoNoSistema){
 
      printf("Tempo de Usuário: %.6lf segundos.\n", tempoUsuario);
@@ -40,7 +40,7 @@ void testaAberturaArquivo(FILE* arquivo, char* arquivoAberto){
 }
 
 // Função para ler os dados de um arquivo e adicioná-los a um tabuleiro.
-void leituraTabuleiro(FILE* arquivo, unsigned long int n, long int* tabuleiro){
+void leituraTabuleiro(FILE* arquivo, long int n, long int* tabuleiro){
 
      if(n < 0 || n > 100000) {
           printf("Digite um N (0 <= N <= 100000).\n");

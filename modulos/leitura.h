@@ -4,11 +4,11 @@
 
 void verificacaoArquivoEntrada(char *argv[], char* inputFile, char* estrategia);
 
-void imprimirSaidas(FILE *arquivoSaida, unsigned long int resultado, 
+void imprimirSaidas(FILE *arquivoSaida, long int resultado, 
    double tempoUsuario, double tempoNoSistema);
 
 void testaAberturaArquivo(FILE* arquivo, char* arquivoAberto);
 
-void leituraTabuleiro(FILE* arquivo, unsigned long int n, long int* tabuleiro);
+void leituraTabuleiro(FILE* arquivo, long int n, long int* tabuleiro);
 
 #endif

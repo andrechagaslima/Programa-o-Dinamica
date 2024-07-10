@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "solucaodinamica.h"
 
-unsigned long int resolucao(long int *tabuleiro, unsigned long int n, int i, ValorCalculado *pontosArmazenados){
+long int resolucao(long int *tabuleiro, long int n, int i, ValorCalculado *pontosArmazenados){
      
      if (i >= n) {
           return 0;
@@ -12,8 +12,8 @@ unsigned long int resolucao(long int *tabuleiro, unsigned long int n, int i, Val
           return pontosArmazenados[i].valor;
      }
 
-     unsigned long int valor1 = resolucao(tabuleiro, n, i + 1, pontosArmazenados);
-     unsigned long int valor2 = tabuleiro[i] + resolucao(tabuleiro, n, i + 2, pontosArmazenados);
+     long int valor1 = resolucao(tabuleiro, n, i + 1, pontosArmazenados);
+     long int valor2 = tabuleiro[i] + resolucao(tabuleiro, n, i + 2, pontosArmazenados);
 
      pontosArmazenados[i].valor = max(valor1, valor2);
      pontosArmazenados[i].calculado = true;
@@ -21,7 +21,7 @@ unsigned long int resolucao(long int *tabuleiro, unsigned long int n, int i, Val
      return pontosArmazenados[i].valor;
 }
 
-unsigned long int solucaodinamica(long int *tabuleiro, unsigned long int n){
+long int solucaodinamica(long int *tabuleiro, long int n){
      
      ValorCalculado *pontosArmazenados = (ValorCalculado *)malloc((n) * sizeof(ValorCalculado));
      
@@ -30,7 +30,7 @@ unsigned long int solucaodinamica(long int *tabuleiro, unsigned long int n){
           pontosArmazenados[i].calculado = false;
      }
 
-     unsigned long int resultado = resolucao(tabuleiro, n, 0, pontosArmazenados);
+     long int resultado = resolucao(tabuleiro, n, 0, pontosArmazenados);
 
      free(pontosArmazenados);
 

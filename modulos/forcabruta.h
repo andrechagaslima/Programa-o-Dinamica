@@ -2,8 +2,8 @@
 #define FORCABRUTA_H
 #include "utilidades.h"
 
-unsigned long int solucao(long int *tabuleiro, unsigned long int n, int i);
+long int solucao(long int *tabuleiro, long int n, int i);
 
-unsigned long int forcabruta(long int *tabuleiro, unsigned long int n);
+long int forcabruta(long int *tabuleiro, long int n);
 
 #endif

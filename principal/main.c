@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
      char *outputFile = "saida.txt";
      struct rusage start, end; //Usados para calcular o tempo (getrusage)
      struct timeval inicio, fim; //Usados para calcular o tempo (gettimeofday)
-     unsigned long int resultado = 0;
+     long int resultado = 0;
 
      //Recebe a estratégia e o nome do arquivo de entrada
      estrategia = argv[1];
@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
      FILE *arquivoSaida = fopen(outputFile, "w");
      testaAberturaArquivo(arquivoSaida, outputFile);
 
-     unsigned long int n;
+     long int n;
      //Leitura do tamanho do array
      fscanf(arquivo, "%lu", &n);
 
