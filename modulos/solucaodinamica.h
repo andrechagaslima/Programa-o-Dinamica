@@ -8,8 +8,8 @@ typedef struct ValorCalculado {
     bool calculado;                
 } ValorCalculado;
 
-unsigned long int resolucao(unsigned long int *tabuleiro, unsigned long int n, int i, ValorCalculado *pontosArmazenados);
+unsigned long int resolucao(long int *tabuleiro, unsigned long int n, int i, ValorCalculado *pontosArmazenados);
 
-unsigned long int solucaodinamica(unsigned long int *tabuleiro, unsigned long int n);
+unsigned long int solucaodinamica(long int *tabuleiro, unsigned long int n);
 
 #endif

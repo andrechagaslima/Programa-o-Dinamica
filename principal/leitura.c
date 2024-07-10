@@ -40,7 +40,7 @@ void testaAberturaArquivo(FILE* arquivo, char* arquivoAberto){
 }
 
 // Função para ler os dados de um arquivo e adicioná-los a um tabuleiro.
-void leituraTabuleiro(FILE* arquivo, unsigned long int n, unsigned long int* tabuleiro){
+void leituraTabuleiro(FILE* arquivo, unsigned long int n, long int* tabuleiro){
 
      if(n < 0 || n > 100000) {
           printf("Digite um N (0 <= N <= 100000).\n");
@@ -49,7 +49,7 @@ void leituraTabuleiro(FILE* arquivo, unsigned long int n, unsigned long int* tab
      }
 
      for (int i = 0; i < n; i++) {
-          fscanf(arquivo, "%lu", &tabuleiro[i]);
+          fscanf(arquivo, "%ld", &tabuleiro[i]);
      }
 
 }

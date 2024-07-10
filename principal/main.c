@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
      //Leitura do tamanho do array
      fscanf(arquivo, "%lu", &n);
 
-     unsigned long int *tabuleiro = (unsigned long int *)malloc(n * sizeof(unsigned long int));
+     long int *tabuleiro = (long int *)malloc(n * sizeof(long int));
 
      leituraTabuleiro(arquivo, n, tabuleiro);
 

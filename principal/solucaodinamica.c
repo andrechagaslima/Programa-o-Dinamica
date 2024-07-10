@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "solucaodinamica.h"
 
-unsigned long int resolucao(unsigned long int *tabuleiro, unsigned long int n, int i, ValorCalculado *pontosArmazenados){
+unsigned long int resolucao(long int *tabuleiro, unsigned long int n, int i, ValorCalculado *pontosArmazenados){
      
      if (i >= n) {
           return 0;
@@ -21,11 +21,12 @@ unsigned long int resolucao(unsigned long int *tabuleiro, unsigned long int n, i
      return pontosArmazenados[i].valor;
 }
 
-unsigned long int solucaodinamica(unsigned long int *tabuleiro, unsigned long int n){
+unsigned long int solucaodinamica(long int *tabuleiro, unsigned long int n){
      
      ValorCalculado *pontosArmazenados = (ValorCalculado *)malloc((n) * sizeof(ValorCalculado));
      
      for (int i = 0; i < n; i++) {
+          pontosArmazenados[i].valor = 0;
           pontosArmazenados[i].calculado = false;
      }
 

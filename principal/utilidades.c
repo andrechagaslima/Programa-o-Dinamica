@@ -1,6 +1,6 @@
 #include "utilidades.h"
 
-int max(int a, int b){
+unsigned long int max(unsigned long int a, unsigned long int b){
      if(a > b){
           return a;
      } else {
