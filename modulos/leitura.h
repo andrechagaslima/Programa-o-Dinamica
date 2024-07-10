@@ -1,6 +1,5 @@
 #ifndef LEITURA_H
 #define LEITURA_H
-
 #include <stdio.h>
 
 void verificacaoArquivoEntrada(char *argv[], char* inputFile, char* estrategia);
@@ -10,6 +9,6 @@ void imprimirSaidas(FILE *arquivoSaida, unsigned long int resultado,
 
 void testaAberturaArquivo(FILE* arquivo, char* arquivoAberto);
 
-void leituraArray(FILE* arquivo, unsigned long int n, unsigned long int* array);
+void leituraTabuleiro(FILE* arquivo, unsigned long int n, unsigned long int* tabuleiro);
 
 #endif

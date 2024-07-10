@@ -3,10 +3,10 @@
 #include <unistd.h>
 #include <sys/resource.h>
 #include <sys/time.h>
-#include "leitura.h"
-#include "bruteForce.h"
-#include "dp.h"
 #include <string.h>
+#include "leitura.h"
+#include "forcabruta.h"
+#include "solucaodinamica.h"
 
 int main(int argc, char *argv[]) {
     
@@ -17,6 +17,7 @@ int main(int argc, char *argv[]) {
      struct timeval inicio, fim; //Usados para calcular o tempo (gettimeofday)
      unsigned long int resultado = 0;
 
+     //Recebe a estratégia e o nome do arquivo de entrada
      estrategia = argv[1];
      inputFile = argv[2];
 
@@ -32,19 +33,19 @@ int main(int argc, char *argv[]) {
 
      unsigned long int n;
      //Leitura do tamanho do array
-     fscanf(arquivo, "%ld", &n);
+     fscanf(arquivo, "%lu", &n);
 
-     unsigned long int *array = (unsigned long int *)malloc(n * sizeof(unsigned long int));
+     unsigned long int *tabuleiro = (unsigned long int *)malloc(n * sizeof(unsigned long int));
 
-     leituraArray(arquivo, n, array);
+     leituraTabuleiro(arquivo, n, tabuleiro);
 
      getrusage(RUSAGE_SELF, &start);
      gettimeofday(&inicio, NULL);
 
      if(estrategia[0] == 'A') {
-          resultado = bruteForce(array, n);
+          resultado = forcabruta(tabuleiro, n);
      } else if (estrategia[0] == 'D') {
-          resultado = dynamic(array, n);
+          resultado = solucaodinamica(tabuleiro, n);
      }
 
      gettimeofday(&fim, NULL);
@@ -58,11 +59,10 @@ int main(int argc, char *argv[]) {
      imprimirSaidas(arquivoSaida, resultado, tempoUsuario, tempoNoSistema);
      
      //Finalizações
-     free(array);
+     free(tabuleiro);
      fclose(arquivo);
      fclose(arquivoSaida);
 
      return 0;
 
 }
-   
