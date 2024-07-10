@@ -25,7 +25,7 @@ double tempoUsuario, double tempoNoSistema){
 
      printf("Tempo de Usuário: %.6lf segundos.\n", tempoUsuario);
      printf("Algoritmo ficou %.6lf segundos no sistema.\n", tempoNoSistema);
-     fprintf(arquivoSaida, "%lu", resultado);
+     fprintf(arquivoSaida, "%ld", resultado);
 
 }
 

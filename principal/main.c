@@ -33,7 +33,7 @@ int main(int argc, char *argv[]) {
 
      long int n;
      //Leitura do tamanho do array
-     fscanf(arquivo, "%lu", &n);
+     fscanf(arquivo, "%ld", &n);
 
      long int *tabuleiro = (long int *)malloc(n * sizeof(long int));
 
