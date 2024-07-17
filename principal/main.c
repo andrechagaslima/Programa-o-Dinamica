@@ -42,6 +42,7 @@ int main(int argc, char *argv[]) {
      getrusage(RUSAGE_SELF, &start);
      gettimeofday(&inicio, NULL);
 
+     //Escolha de Estratégia
      if(estrategia[0] == 'A') {
           resultado = forcabruta(tabuleiro, n);
      } else if (estrategia[0] == 'D') {
